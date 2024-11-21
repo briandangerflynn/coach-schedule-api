@@ -6,13 +6,13 @@ class AppointmentsController < ApplicationController
       appointments = current_user.appointments_as_coach
       render json: appointments.to_json(include: {
         coach: { only: [ :first_name, :last_name, :phone ] },
-        student: { only: [ :first_name, :last_name ] }
+        student: { only: [ :first_name, :last_name, :phone ] }
       })
     elsif current_user.student?
       appointments = current_user.appointments_as_student.or(Appointment.where(student: nil)).includes(:coach, :student)
       render json: appointments.to_json(include: {
         coach: { only: [ :first_name, :last_name, :phone ] },
-        student: { only: [ :first_name, :last_name ] }
+        student: { only: [ :first_name, :last_name, :phone ] }
       })
     end
   end
