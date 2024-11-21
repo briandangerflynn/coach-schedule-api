@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: 2024-11-20 11:29:26
+  end_time: 2024-11-20 11:29:26
+  satisfaction_rating: 1
+  notes: MyText
+  coach: one
+  student: one
+
+two:
+  start_time: 2024-11-20 11:29:26
+  end_time: 2024-11-20 11:29:26
+  satisfaction_rating: 1
+  notes: MyText
+  coach: two
+  student: two
