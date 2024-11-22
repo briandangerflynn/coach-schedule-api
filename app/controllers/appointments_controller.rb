@@ -21,8 +21,8 @@ class AppointmentsController < ApplicationController
     appointment = Appointment.find(params[:id])
 
     render json: appointment.to_json(include: {
-      coach: { only: [ :first_name, :last_name ] },
-      student: { only: [ :first_name, :last_name ] }
+      coach: { only: [ :first_name, :last_name, :phone ] },
+      student: { only: [ :first_name, :last_name, :phone ] }
     })
   end
 
@@ -44,8 +44,8 @@ class AppointmentsController < ApplicationController
 
     if appointment.save
       render json: appointment.to_json(include: {
-        coach: { only: [ :first_name, :last_name ] },
-        student: { only: [ :first_name, :last_name ] }
+        coach: { only: [ :first_name, :last_name, :phone ] },
+        student: { only: [ :first_name, :last_name, :phone ] }
       })
     else
       render json: appointment.errors, status: :unprocessable_entity
