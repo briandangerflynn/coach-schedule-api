@@ -13,18 +13,21 @@ coach1 = User.create!(first_name: "Ted", last_name: "Lasso", email: "coach1@gmai
 coach2 = User.create!(first_name: "Chubbs", last_name: "Peterson", email: "coach2@gmail.com", phone: "(123)-123-4321", role: "coach", password: "asdf")
 coach3 = User.create!(first_name: "Patches", last_name: "O'Houlihan", email: "coach3@gmail.com", phone: "(123)-123-7890", role: "coach", password: "asdf")
 
-time_in_2_hours = Time.current + 2.hours
-time_in_3_hours = Time.current + 3.hours
+tomorrow = Time.current + 1.day
+yesterday = Time.current - 1.day
 
+tomorrow_9am = tomorrow.change(hour: 9, min: 0, sec: 0)
+tomorrow_11am = tomorrow.change(hour: 11, min: 0, sec: 0)
+yesterday_9am = yesterday.change(hour: 9, min: 0, sec: 0)
 
 Appointment.create!([
-  { start_time: Time.current, end_time: nil, coach: coach1, student: nil, rating: nil, notes: nil },
-  { start_time: time_in_2_hours, end_time: nil, coach: coach1, student: nil, rating: nil, notes: nil },
-  { start_time: time_in_3_hours, end_time: nil, coach: coach1, student: nil, rating: nil, notes: nil },
+  { start_time: tomorrow_9am, end_time: nil, coach: coach1, student: nil, rating: nil, notes: nil },
+  { start_time: tomorrow_11am, end_time: nil, coach: coach1, student: nil, rating: nil, notes: nil },
+  { start_time: yesterday_9am, end_time: nil, coach: coach1, student: nil, rating: nil, notes: nil },
   { start_time: Time.current, end_time: nil, coach: coach2, student: nil, rating: nil, notes: nil },
-  { start_time: time_in_2_hours, end_time: nil, coach: coach2, student: nil, rating: nil, notes: nil },
-  { start_time: time_in_3_hours, end_time: nil, coach: coach2, student: nil, rating: nil, notes: nil },
+  { start_time: tomorrow_11am, end_time: nil, coach: coach2, student: nil, rating: nil, notes: nil },
+  { start_time: yesterday_9am, end_time: nil, coach: coach2, student: nil, rating: nil, notes: nil },
   { start_time: Time.current, end_time: nil, coach: coach3, student: nil, rating: nil, notes: nil },
-  { start_time: time_in_2_hours, end_time: nil, coach: coach3, student: nil, rating: nil, notes: nil },
-  { start_time: time_in_3_hours, end_time: nil, coach: coach3, student: nil, rating: nil, notes: nil }
+  { start_time: tomorrow_11am, end_time: nil, coach: coach3, student: nil, rating: nil, notes: nil },
+  { start_time: yesterday_9am, end_time: nil, coach: coach3, student: nil, rating: nil, notes: nil }
 ])
