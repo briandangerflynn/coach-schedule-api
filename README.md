@@ -1,25 +1,10 @@
-# README
+### Instructions to Run
+- `git clone https://github.com/briandangerflynn/coach-schedule-api.git`
+- `cd coach-schedule-api`
+- `rails db:create && rails db:migrate && rails db:seed`
+- `bundle install`
+- `rails s`
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- You can find the client here: https://github.com/briandangerflynn/coach-schedule-client
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# coach-schedule-api
+### Thanks for reviewing! 😃
